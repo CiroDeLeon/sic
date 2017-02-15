@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="1588" pageHeight="595" orientation="Landscape" columnWidth="1548" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="851a0e6d-8a0b-459d-9553-ceea4d3c5628">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="1031"/>
+	<property name="ireport.y" value="0"/>
+	<field name="tipo_documento" class="java.lang.String"/>
+	<field name="nit" class="java.lang.Long"/>
+	<field name="dv" class="java.lang.String"/>
+	<field name="p_apellido" class="java.lang.String"/>
+	<field name="s_apellido" class="java.lang.String"/>
+	<field name="p_nombre" class="java.lang.String"/>
+	<field name="s_nombre" class="java.lang.String"/>
+	<field name="razon_social" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="id_departamento" class="java.lang.String"/>
+	<field name="id_municipio" class="java.lang.String"/>
+	<field name="id_pais" class="java.lang.String"/>
+	<field name="valor" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="2" width="67" height="20" uuid="c1077f75-b735-4a36-bdb6-63e163e23b78"/>
+				<text><![CDATA[Tipo Doc.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="2" width="100" height="20" uuid="0c6fdf4c-42da-4cab-bf53-8e7a695f26e2"/>
+				<text><![CDATA[No. Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="2" width="54" height="20" uuid="ac3d3e68-9812-4c24-82d7-1a91d641c773"/>
+				<text><![CDATA[Digito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="2" width="100" height="20" uuid="5ea07abf-ef99-41b7-837a-1e2bd58cb365"/>
+				<text><![CDATA[p_apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="2" width="100" height="20" uuid="ddee73ec-a25c-43f4-afa9-f47e54e58de4"/>
+				<text><![CDATA[s_apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="2" width="100" height="20" uuid="835273be-9570-4f39-ae59-cf3e642f379e"/>
+				<text><![CDATA[p_nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="523" y="2" width="100" height="20" uuid="7d9ff98b-5cec-4362-b3b2-7f24cdc92d85"/>
+				<text><![CDATA[s_nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="623" y="2" width="207" height="20" uuid="af90a647-9c5a-4252-bb9d-85ff3c8270a0"/>
+				<text><![CDATA[razon_social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="830" y="2" width="228" height="20" uuid="d4848a0a-fa3f-44df-9789-dc185d044abc"/>
+				<text><![CDATA[direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1058" y="2" width="100" height="20" uuid="f87a823a-335a-4acd-885f-84a337e4a5b3"/>
+				<text><![CDATA[id_departamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1258" y="2" width="100" height="20" uuid="a9c95b94-12d4-4289-a6ad-48691c541443"/>
+				<text><![CDATA[id_pais]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1158" y="2" width="100" height="20" uuid="4dc490f3-c063-4bcc-aac0-32194aa51a03"/>
+				<text><![CDATA[id_municipio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1358" y="2" width="100" height="20" uuid="d664cddb-47c0-4950-bef0-2880677f1bd5"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[valor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="0" width="67" height="20" uuid="78e77321-f9ca-493e-9540-826627d4886a"/>
+				<textFieldExpression><![CDATA[$F{tipo_documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="0" width="100" height="20" uuid="463be490-1f62-43bf-9aec-89a1af847671"/>
+				<textFieldExpression><![CDATA[$F{nit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="0" width="54" height="20" uuid="83f54b74-a7b5-4883-b2f0-091b79e7fc03"/>
+				<textFieldExpression><![CDATA[$F{dv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="0" width="100" height="20" uuid="33d706e3-ec3d-427f-93cf-af6128b9ce2e"/>
+				<textFieldExpression><![CDATA[$F{p_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="0" width="100" height="20" uuid="de8df2f6-b5bb-4358-8078-4bd20b4ad6c9"/>
+				<textFieldExpression><![CDATA[$F{s_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="0" width="100" height="20" uuid="a64569f7-f1c7-4dc1-9947-056700e1cb7d"/>
+				<textFieldExpression><![CDATA[$F{p_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="523" y="0" width="100" height="20" uuid="307cfd83-4416-4dc3-a6ea-b3552cf7fa37"/>
+				<textFieldExpression><![CDATA[$F{s_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="623" y="0" width="207" height="20" uuid="0eee1f1a-32da-4248-87d8-7299f4b7e269"/>
+				<textFieldExpression><![CDATA[$F{razon_social}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="830" y="0" width="228" height="20" uuid="241201f0-3b75-493e-a777-15ae7ca321fa"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1058" y="0" width="100" height="20" uuid="679d12fd-4918-4e21-8aad-b37dba95e5f0"/>
+				<textFieldExpression><![CDATA[$F{id_departamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1258" y="0" width="100" height="20" uuid="6f012b38-d1e1-46b3-8ee7-3c0fb831e8e9"/>
+				<textFieldExpression><![CDATA[$F{id_pais}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1158" y="0" width="100" height="20" uuid="ce08c15f-25bd-447a-b03d-1491a2abd64e"/>
+				<textFieldExpression><![CDATA[$F{id_municipio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement x="1358" y="0" width="100" height="20" uuid="06de3703-b4a1-4fdf-a885-991de9b94fa2"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

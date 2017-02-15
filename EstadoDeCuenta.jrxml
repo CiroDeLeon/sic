@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="74597887-9601-42d2-bb56-236f5a4e4129">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="iddocumento" class="java.lang.Long"/>
+	<field name="fecha_contable" class="java.util.Date"/>
+	<field name="auxiliar" class="java.lang.String"/>
+	<field name="cuenta_t" class="java.lang.String"/>
+	<field name="soporte" class="java.lang.String"/>
+	<field name="detalle" class="java.lang.String"/>
+	<field name="debito" class="java.lang.Double"/>
+	<field name="credito" class="java.lang.Double"/>
+	<variable name="sdebito" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{debito}]]></variableExpression>
+	</variable>
+	<variable name="scredito" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{credito}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="106" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" uuid="629f1a6d-035d-43e6-8422-8ded99d3fa8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO DE CUENTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="72" width="100" height="20" uuid="a224a465-2bf1-4fd9-a605-6216a89c225b"/>
+				<text><![CDATA[CUENTA T :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="72" width="360" height="20" uuid="91b4f079-2235-41e9-b9b4-e2080673c3f3"/>
+				<textFieldExpression><![CDATA[$F{cuenta_t}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="59" height="20" uuid="4590329c-7d1d-4d5b-aad0-8be90d3e5f34"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="59" y="2" width="59" height="20" uuid="0bb7bcfb-3362-4bab-ac84-01740697914e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Auxiliar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="2" width="49" height="20" uuid="b26a21d1-c509-4a34-8a21-8bf865ea937c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Soporte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="2" width="213" height="20" uuid="f40eff2f-8298-4ac6-8501-cb8692ffbe8d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detalle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="2" width="80" height="20" uuid="45c4221e-45fe-4fb3-a357-22f690166dd6"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Debito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="2" width="95" height="20" uuid="9250ab74-781b-4321-a3fb-a9f5f97ceaea"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Credito]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="59" height="20" uuid="1b4c04f3-4874-4939-9984-4ccff61030c4"/>
+				<textFieldExpression><![CDATA[$F{fecha_contable}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="59" y="0" width="59" height="20" uuid="67ff63a3-567a-4460-ab3d-ff3db2e869b5"/>
+				<textFieldExpression><![CDATA[$F{auxiliar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="0" width="49" height="20" uuid="a3c1949f-c50b-4a51-982b-cbba82e54f97"/>
+				<textFieldExpression><![CDATA[$F{soporte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="0" width="213" height="20" uuid="c35f9a41-db44-4261-bfd8-65b61a1b5954"/>
+				<textFieldExpression><![CDATA[$F{detalle}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="380" y="0" width="80" height="20" uuid="b54ceab0-eb3a-438e-9c01-ac587ae4c422"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{debito}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="460" y="0" width="95" height="20" uuid="5ca173e5-7367-4523-8365-74816ff66b61"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{credito}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="45" splitType="Stretch">
+			<textField pattern="#,##0">
+				<reportElement x="380" y="0" width="80" height="20" uuid="106f589e-32cc-44c2-9d83-4c568e8392f2"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{sdebito}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="460" y="0" width="95" height="20" uuid="4d3324f1-79da-4e07-92a6-dbcb5db21cf3"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{scredito}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="25" width="80" height="20" uuid="65e7b7c3-96c7-4e62-8d52-694a25d8e31d"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement x="460" y="25" width="95" height="20" uuid="678ccbe1-4edb-4d6c-9780-e420c16e9f6c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{sdebito}-$V{scredito}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

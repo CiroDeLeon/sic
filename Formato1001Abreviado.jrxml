@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ded0fdf-aee7-4d84-8690-c1c8e8fe2e7d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="38"/>
+	<property name="ireport.y" value="0"/>
+	<field name="id_cuenta_t" class="java.lang.Object"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="id_cuenta" class="java.lang.String"/>
+	<field name="pagado" class="java.lang.Double"/>
+	<variable name="sumatoria_pagado" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{pagado}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="31" uuid="7a26e6eb-072f-492e-84ba-f0d892eb1af2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMATO 1001  DETALLADO]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="daf3f9b3-d216-44ce-8817-b4eb010d3593"/>
+				<textElement>
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CTA T]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="284" height="20" uuid="4818c985-4ce7-4a21-9edc-e9ba1959c784"/>
+				<textElement>
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="0" width="72" height="20" uuid="8ff70b1d-b718-4d28-8596-ee9f36193a85"/>
+				<textElement>
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20" uuid="6af5f3e5-e307-48af-aefa-db2be590c24d"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[SALIDA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="577297f3-cd84-432f-aeb8-53555d2db02d"/>
+				<textFieldExpression><![CDATA[""+$F{id_cuenta_t}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="284" height="20" uuid="f97ed922-eab8-4065-879c-810cb511813f"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="0" width="72" height="20" uuid="1f235567-e0e9-49c3-ad91-ec884fdba4a3"/>
+				<textFieldExpression><![CDATA[$F{id_cuenta}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement x="455" y="0" width="100" height="20" uuid="b4d2911d-6abb-40bc-bc7c-3dcc702e5e1b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{pagado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField pattern="#,##0;-#,##0">
+				<reportElement x="455" y="0" width="101" height="20" uuid="01fe8530-9d73-47e8-9e30-a96536dc6072"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumatoria_pagado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
